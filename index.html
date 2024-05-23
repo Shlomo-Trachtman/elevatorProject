@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    
+    <div class="mainContainer">
+        <!-- Move the input section outside the building container -->
+        <div id="input_section">
+            <label for="numBuildings">Number of Buildings:</label>
+            <input type="number" id="numBuildings" value="1" min="1"><br>
+    
+            <label for="numFloors">Number of Floors per Building:</label>
+            <input type="number" id="numFloors" value="7" min="1"><br>
+    
+            <label for="numElevators">Number of Elevators per Building:</label>
+            <input type="number" id="numElevators" value="3" min="1"><br>
+    
+            <button id="submitBtn">Submit</button>
+        </div>
+    
+    </div>
+        
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
