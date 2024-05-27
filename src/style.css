@@ -1,9 +1,19 @@
-.mainContainer  .allBuildings{
+.mainContainer {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
     align-items: flex-end;
     border: solid black;
+}
+
+.allBuildings{
+    display: flex;
+    flex-direction: row;
+}
+
+.building {
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -174,4 +184,11 @@
     font-size: 1.4em;
     color: #333;
     background-color: white;
+}
+
+.floorButton{
+    font-size: x-large!important;
+    margin-top: -30px;
+    color: #ffffff;
+
 }
