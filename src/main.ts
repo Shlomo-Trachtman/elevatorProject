@@ -1,4 +1,4 @@
-import { ElevatorController } from './controller';
+import { ElevatorController } from './elevatorController';
 import { Building } from './buildingCreator';
 
 let numOfBuildings: number = 1;
