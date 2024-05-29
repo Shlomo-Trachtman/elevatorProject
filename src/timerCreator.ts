@@ -3,7 +3,7 @@ export class Timer {
         const timerDiv = document.createElement('div');
         timerDiv.classList.add('timer');
         // Assign a unique ID for each floor's timer within the building
-        timerDiv.id = `b${buildingIndex}-timer-f${floor}`;
+        timerDiv.id = `b${buildingIndex}-f${floor}-timer`;
         return timerDiv;
     }
 }
