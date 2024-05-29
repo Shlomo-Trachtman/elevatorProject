@@ -1,4 +1,4 @@
-import { Elevator } from './elevatorCreator';
+import { Elevator } from '../elevator/elevatorCreator';
 import { Floor } from './floorCreator';
 
 export class Building {
