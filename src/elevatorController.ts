@@ -1,5 +1,6 @@
 import { Elevator } from './moveElevator';
 
+
 export class ElevatorController {
     numOfBuildings: number;
     elevators: Elevator[];
@@ -25,9 +26,13 @@ export class ElevatorController {
     callElevator(buildingId: string, targetFloor: number, button: HTMLButtonElement) {
         // Find elevators belonging to the specified building
         const elevatorsInBuilding = this.elevators.filter(elevator => elevator.element.id.startsWith(buildingId));
-
+        
         // Find if there's an elevator on the target floor in the specified building
         const elevatorOnFloor = elevatorsInBuilding.find(elevator => elevator.currentFloor === targetFloor);
+
+        if (elevatorOnFloor){
+            return
+        }
 
         // If there's no elevator on the target floor in the specified building
         const test: {
@@ -49,47 +54,32 @@ export class ElevatorController {
                     }
                     continue;
                 }
+                
                 let time = Math.abs(elevator.currentFloor - elevator.destinations[0]) * 0.5;
+                let stops = elevator.destinations.length * 2;
                 for (let j = 0; j < elevator.destinations.length - 1; j++) {
-                    time += Math.abs(elevator.destinations[j] - elevator.destinations[j + 1]) * 0.5 + 2;
+                    time += Math.abs(elevator.destinations[j] - elevator.destinations[j + 1]) * 0.5 + stops;
                 }
                 time += Math.abs(elevator.destinations[elevator.destinations.length - 1] - targetFloor) * 0.5;
                 if (time < test.time) {
                     test.time = time;
                     test.elevator = elevator;
                 }
+                
             }
         }
 
-        // Create a timer for displaying the waiting time
-        const timer = new Timer();
-        const timerElement = timer.createTimer(parseInt(buildingId), targetFloor);
-        document.body.appendChild(timerElement);
+        
+        
+        // Move elevator to the target floor
+        test.elevator.moveToFloor(targetFloor);
 
-        // Update timer every second
         const timerInterval = setInterval(() => {
             test.time -= 1;
             if (test.time <= 0) {
                 clearInterval(timerInterval);
-                timerElement.innerText = '';
-                timerElement.remove(); // Remove timer element when time is up
-            } else {
-                timerElement.innerText = `${test.time}`;
-            }
-        }, 1000);
+            }}, 1000);
 
-        // Move elevator to the target floor
-        return test.elevator.moveToFloor(targetFloor);
-    }
-}
-
-// Timer class for creating timers with unique IDs
-export class Timer {
-    createTimer(buildingIndex: number, floor: number): HTMLDivElement {
-        const timerDiv = document.createElement('div');
-        timerDiv.classList.add('timer');
-        // Assign a unique ID for each floor's timer within the building
-        timerDiv.id = `b${buildingIndex}-t${floor}-timer`;
-        return timerDiv;
+        return timerInterval;
     }
 }

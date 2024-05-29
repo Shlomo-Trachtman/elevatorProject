@@ -14,7 +14,7 @@ export class Elevator {
         this.floorHeight = floorHeight;
         this.destinations = [];
         this.inMotion = false; // Initialize inMotion flag to false
-        this.elevatorSound = new Audio('./src/ding.mp3');
+        this.elevatorSound = new Audio('./public/ding.mp3');
     }
 
     playElevatorSound() {
@@ -71,7 +71,7 @@ export class Elevator {
         setTimeout(() => {
             console.log(`Elevator Reached The Floor`);
             this.playElevatorSound();
-        }, ((calculateDuration * 1000) - 500));
+        }, ((calculateDuration * 1000)));
 
 
         setTimeout(() => {

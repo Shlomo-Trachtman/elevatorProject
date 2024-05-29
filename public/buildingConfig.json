@@ -1,0 +1,17 @@
+{
+    "buildings": [
+      {
+        "floors": 10,
+        "elevators": 3
+      },
+      {
+        "floors": 15,
+        "elevators": 4
+      },
+      {
+        "floors": 5,
+        "elevators": 2
+      }
+    ]
+  }
+  

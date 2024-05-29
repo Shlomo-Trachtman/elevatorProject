@@ -1,4 +1,5 @@
 import { Timer } from './timerCreator';
+import { ElevatorController } from './elevatorController';
 
 export class Floor {
     numFloors: number;
@@ -25,12 +26,8 @@ export class Floor {
             // Create and append the timer for the floor
             const timer = new Timer();
             const timerDiv = timer.createTimer(buildingIndex, floor);
-            floorDiv.appendChild(timerDiv);
 
-            const title = document.createElement('div');
-            title.classList.add('floorButton');
-            title.id = `b${buildingIndex}-t${floor}`;
-            floorDiv.appendChild(title);
+            floorDiv.appendChild(timerDiv);
 
             floorsContainer.appendChild(floorDiv);
         }

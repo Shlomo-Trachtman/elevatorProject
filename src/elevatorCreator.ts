@@ -16,7 +16,7 @@ export class Elevator {
             elevatorDiv.classList.add(`elevator${e}`);
             const elevatorImg = document.createElement('img');
             elevatorImg.id = `b${buildingIndex}-e${e}`;
-            elevatorImg.src = "./src/elv.png";
+            elevatorImg.src = "./public/elv.png";
             elevatorImg.height = this.elevatorHeight;
             elevatorDiv.appendChild(elevatorImg);
             elevatorsContainer.appendChild(elevatorDiv);

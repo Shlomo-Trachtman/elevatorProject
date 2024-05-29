@@ -3,12 +3,12 @@
     flex-direction: row;
     margin-bottom: 20px;
     align-items: flex-end;
-    border: solid black;
 }
 
 .allBuildings{
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
 }
 
 .building {
@@ -31,7 +31,7 @@
     border-width: 7px;
     border-right: solid black;
     border-left: solid black;
-    position: relative; /* Added position relative */
+    position: relative; 
 
 }
 
