@@ -1,5 +1,5 @@
-import { ElevatorController } from './elevatorController';
-import { Building } from './buildingCreator';
+import { ElevatorController } from './elevator/elevatorController';
+import { Building } from './building/buildingCreator';
 
 const floorHeight = 110;
 const elevatorHeight = 107;

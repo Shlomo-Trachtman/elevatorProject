@@ -1,5 +1,5 @@
 import { Timer } from './timerCreator';
-import { ElevatorController } from './elevatorController';
+import { ElevatorController } from '../elevator/elevatorController';
 
 export class Floor {
     numFloors: number;
